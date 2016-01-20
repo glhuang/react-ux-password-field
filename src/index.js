@@ -202,7 +202,7 @@ var InputPassword = React.createClass({
     var zxcvbnSrc;
 
     // Load zxcvbn async if its enabled and doesn't already exist
-    if (this.props.zxcvbn && typeof zxcvbn === 'undefined') {
+    if (this.props.zxcvbn && typeof zxcvbn === 'undefined' && !this.props.packagedZxcvbn) {
 
       zxcvbnSrc = this.props.zxcvbn !== 'debug' ? this.props.zxcvbn : config.zxcvbnSrc;
 
