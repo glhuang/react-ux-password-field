@@ -21,6 +21,7 @@ var InputPassword = React.createClass({
     minLength: RP.number,
     strengthLang:RP.array,
     id: RP.string,
+    packagedZxcvbn: RP.func
   },
 
 
@@ -157,6 +158,7 @@ var InputPassword = React.createClass({
   },
 
   handleZxcvbn(val) {
+    var zxcvbn = this.props.packagedZxcvbn ? this.props.packagedZxcvbn : window.zxcvbn;
 
     if (typeof zxcvbn === 'undefined' && typeof window.zxcvbn === 'undefined') {
       return;
